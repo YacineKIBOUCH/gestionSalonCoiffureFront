@@ -1,0 +1,21 @@
+<div>
+    <h1>Ajouter une reservation</h1>
+    <form (ngSubmit)="saveReservations()">
+      <div>
+        <label for="nom">date</label>
+        <input type="text" [(ngModel)]="reservation.date" name="date" required>
+      </div>
+      <button type="submit">Soumettre</button>
+    </form>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>Date</td>
+            </tr>
+            <tr *ngFor="let r of reservationTab">
+                <td>{{a.dateReservation}}</td>
+                <td><button (click)="deleteReservation(r.idReservation)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
