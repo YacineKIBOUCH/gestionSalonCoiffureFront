@@ -7,7 +7,7 @@ import { Utilisateur } from '../models/utilisateur';
   providedIn: 'root'
 })
 export class UtilisateurService {
-  private BASE_URL = "http://localhost:8080/utilisateurs";
+  private BASE_URL = "http://localhost:9090/utilisateurs";
   // HttpClient: un module qui nous permet d'utiliser les verbes http : GET.POST,PUT et DELETE
   constructor(private httpClient:HttpClient) { }
   // findAll --> verbe http GET --> url : BASE_URL --> Récupération des données avec la méthode Observable

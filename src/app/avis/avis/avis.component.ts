@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Utilisateur } from 'src/app/models/utilisateur';
+import { Avis } from 'src/app/models/avis/avis';
 import { AvisService } from 'src/app/services/avis.service';
 
 @Component({
@@ -9,13 +9,12 @@ import { AvisService } from 'src/app/services/avis.service';
   providers:[]
 })
 export class AvisComponent implements OnInit {
-  avis = {
-     titre: '',
-    description: ''};
+
 
    // Déclaration d'un tableau d'utilisateurs
   // ! : le tableau n'est pas initialisé
   avisTab!:any[];
+  av:Avis=new Avis();
  // any : n'importe quel type de données
   // DI : par constructeur  
   constructor(private avisService:AvisService){
@@ -28,12 +27,12 @@ export class AvisComponent implements OnInit {
     this.avisService.findAll().subscribe(data => {this.avisTab = data});
   }
   saveAvis(){
-    this.avisService.save(this.avis).subscribe(
+    this.avisService.save(this.av).subscribe(
       () => {
-        // MAJ la liste des utilisateurs
+        // MAJ la liste des avis
         this.findAllAvis();
         // Vider le formulaire
-        this.avis = {titre:'', description:''};
+        this.av = new Avis();
       }
     )
   }

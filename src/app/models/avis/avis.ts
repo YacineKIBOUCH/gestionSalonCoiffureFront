@@ -1,5 +1,5 @@
-export class avis {
+export class Avis {
     idAvis!:number;
-    titre!:string;
-    description!:string;
+    titreAvis!:string;
+    descriptionAvis!:string;
 }

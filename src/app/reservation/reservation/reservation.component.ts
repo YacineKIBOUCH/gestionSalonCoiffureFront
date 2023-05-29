@@ -13,18 +13,18 @@ export class ReservationComponent {
  // ! : le tableau n'est pas initialisé
  reservationTab!:any[]; 
  reservation:Reservation= new Reservation();// any : n'importe quel type de données
-  findAllReservations: any;
+
  // DI : par constructeur  
  constructor(private reservationService:ReservationService){
  }
  ngOnInit(): void {
    this.findAllReservations();
  }
- findAllAvis(){
+ findAllReservations(){
    // data : les données qui se trouvent dans le cache du navigateur
    this.reservationService.findAll().subscribe(data => {this.reservationTab = data});
  }
- saveAvis(){
+ saveReservation(){
    this.reservationService.save(this.reservation).subscribe(
      () => {
        // MAJ la liste des reservations
@@ -34,7 +34,7 @@ export class ReservationComponent {
      }
    )
  }
- deleteAvis(id:number){
+ deleteReservation(id:number){
    this.reservationService.delete(id).subscribe(
      () => {
        this.findAllReservations();

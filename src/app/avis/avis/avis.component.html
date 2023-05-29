@@ -3,11 +3,11 @@
 <form (ngSubmit)="saveAvis()">
   <div>
     <label for="titre">Titre</label>
-    <input type="text" [(ngModel)]="avis.titre" name="titre" required>
+    <input type="text" [(ngModel)]="av.titreAvis" name="titre" required>
   </div>
   <div>
     <label for="description">Description :</label>
-    <input type="text" [(ngModel)]="avis.description" name="description" required>
+    <input type="text" [(ngModel)]="av.descriptionAvis" name="description" required>
   </div>
   <button type="submit">Soumettre</button>
 </form>
@@ -18,7 +18,7 @@
           <td>Titre</td>
           <td>Description</td>
       </tr>
-      <tr *ngFor="let a of avis">
+      <tr *ngFor="let a of avisTab">
           <td>{{a.titreAvis}}</td>
           <td>{{a.descriptionAvis}}</td>
           <td><button (click)="deleteAvis(a.idAvis)">Delete</button></td>
