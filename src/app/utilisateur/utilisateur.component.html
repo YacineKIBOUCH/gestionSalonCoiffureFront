@@ -13,11 +13,11 @@
             </tr>
             <tr>
                 <td>Username</td>
-                <td><input type="text" [(ngModel)]="user.username" name="username"/></td>
+                <td><input type="text" [(ngModel)]="user.loginUtilisateur" name="loginUtilisateur"/></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="text" [(ngModel)]="user.password" name="password"/></td>
+                <td><input type="text" [(ngModel)]="user.passwordUtilisateur" name="passwordUtilisateur"/></td>
             </tr>
             <tr>
                 <td colspan="2"><button>Ajouter</button></td>
@@ -37,8 +37,8 @@
         <tr *ngFor="let u of users">
             <td>{{u.nomUtilisateur}}</td>
             <td>{{u.prenomUtilisateur}}</td>
-            <td>{{u.username}}</td>
-            <td>{{u.password}}</td>
+            <td>{{u.loginUtilisateur}}</td>
+            <td>{{u.passwordUtilisateur}}</td>
             <td><button (click)="deleteUtilisateur(u.idUtilisateur)">Delete</button></td>
         </tr>
     </table>
